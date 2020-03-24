@@ -84,7 +84,7 @@ trait Metadata
     /**
      *
      * @param \Lib\Metadata\Model\MetadataField $field
-     * @param type $data
+     * @param string $data
      */
     public function addMetadata(\Lib\Metadata\Model\MetadataField $field, $data)
     {
