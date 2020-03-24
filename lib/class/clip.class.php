@@ -172,6 +172,9 @@ class Clip extends Video
         return $keywords;
     }
 
+    /**
+     * @return array|null
+     */
     public function get_parent()
     {
         if ($this->artist) {

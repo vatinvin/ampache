@@ -960,6 +960,11 @@ class XML_Data
         return self::output_xml($string);
     } // shouts
 
+    /**
+     * @param $string
+     * @param bool $full_xml
+     * @return string
+     */
     public static function output_xml($string, $full_xml = true)
     {
         $xml = "";
@@ -1108,6 +1113,11 @@ class XML_Data
 
     // _footer
 
+    /**
+     * @param library_item $libitem
+     * @param bool $user_id
+     * @return mixed|string
+     */
     public static function podcast(library_item $libitem, $user_id = false)
     {
         $xml = new SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?><rss />');

@@ -949,6 +949,10 @@ class User extends database_object
      * @param User $user
      * @param Song $media
      */
+    /**
+     * @param $user
+     * @param $media
+     */
     public static function save_mediaplay($user, $media)
     {
         debug_event('user.class', 'save_mediaplay...', 5);

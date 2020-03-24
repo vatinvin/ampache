@@ -36,8 +36,16 @@ abstract class Handler
      */
     protected $commandSeperator;
 
+    /**
+     * @param $command
+     * @return mixed
+     */
     abstract protected function start($command);
 
+    /**
+     * @param Catalog $handler
+     * @param $command
+     */
     public function setHandler(Catalog $handler, $command)
     {
         $this->handler        = $handler;

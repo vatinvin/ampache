@@ -224,6 +224,12 @@ class Dba
         return $result;
     }
 
+    /**
+     * @param $resource
+     * @param string $class
+     * @param bool $finish
+     * @return array
+     */
     public static function fetch_object($resource, $class = 'stdClass', $finish = true)
     {
         if (!$resource) {

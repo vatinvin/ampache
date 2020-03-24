@@ -216,6 +216,11 @@ class Stats
         return $results['object_cnt'];
     } // get_object_count
 
+    /**
+     * @param $latitude
+     * @param $longitude
+     * @return mixed|null
+     */
     public static function get_cached_place_name($latitude, $longitude)
     {
         $name       = null;

@@ -1,6 +1,9 @@
 <?php
 declare(strict_types=1);
 /* vim:set softtabstop=4 shiftwidth=4 expandtab: */
+
+use Lib\Metadata\Metadata;
+
 /**
  *
  * LICENSE: GNU Affero General Public License, version 3 (AGPLv3)
@@ -23,7 +26,7 @@ declare(strict_types=1);
 
 class Song extends database_object implements media, library_item
 {
-    use \Lib\Metadata\Metadata;
+    use Metadata;
 
     /* Variables from DB */
 
@@ -2280,6 +2283,9 @@ class Song extends database_object implements media, library_item
     /*
      * get_metadata
      * Get an array of song metadata
+     * @return array
+     */
+    /**
      * @return array
      */
     public function get_metadata()

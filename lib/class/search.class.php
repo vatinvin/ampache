@@ -21,6 +21,8 @@ declare(strict_types=1);
  *
  */
 
+use Lib\Metadata\Repository\MetadataField;
+
 /**
  * Search Class
  * Search-related voodoo.  Beware tentacles.
@@ -771,7 +773,7 @@ class Search extends playlist_object
         );
 
         $metadataFields          = array();
-        $metadataFieldRepository = new \Lib\Metadata\Repository\MetadataField();
+        $metadataFieldRepository = new MetadataField();
         foreach ($metadataFieldRepository->findAll() as $metadata) {
             $metadataFields[$metadata->getId()] = $metadata->getName();
         }
@@ -1404,6 +1406,9 @@ class Search extends playlist_object
         return $this->id;
     }
 
+    /**
+     * @return mixed|void
+     */
     public static function garbage_collection()
     {
     }

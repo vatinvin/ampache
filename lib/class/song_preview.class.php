@@ -242,22 +242,35 @@ class Song_Preview extends database_object implements media, playable_item
         return true;
     } // format
 
+    /**
+     * @return mixed
+     */
     public function get_fullname()
     {
         return $this->f_title;
     }
 
+    /**
+     * @return |null
+     */
     public function get_parent()
     {
         // Wanted album is not part of the library, cannot return it.
         return null;
     }
 
+    /**
+     * @return array
+     */
     public function get_childrens()
     {
         return array();
     }
 
+    /**
+     * @param $name
+     * @return array
+     */
     public function search_childrens($name)
     {
         debug_event('song_preview.class', 'search_childrens ' . $name, 5);
@@ -265,6 +278,10 @@ class Song_Preview extends database_object implements media, playable_item
         return array();
     }
 
+    /**
+     * @param null $filter_type
+     * @return array|mixed
+     */
     public function get_medias($filter_type = null)
     {
         $medias = array();
@@ -313,6 +330,9 @@ class Song_Preview extends database_object implements media, playable_item
         return Stream_URL::format($url . $additional_params);
     } // play_url
 
+    /**
+     * @return |null
+     */
     public function stream()
     {
         $data = null;
@@ -328,6 +348,10 @@ class Song_Preview extends database_object implements media, playable_item
         return $data;
     }
 
+    /**
+     * @param null $player
+     * @return array
+     */
     public function get_stream_types($player = null)
     {
         return array('native');
@@ -347,16 +371,30 @@ class Song_Preview extends database_object implements media, playable_item
         return false;
     }
 
+    /**
+     * @return mixed
+     */
     public function get_stream_name()
     {
         return $this->title;
     }
 
+    /**
+     * @param $user
+     * @param $agent
+     * @param $location
+     * @return mixed|void
+     */
     public function set_played($user, $agent, $location)
     {
         // Do nothing
     }
 
+    /**
+     * @param $user
+     * @param $agent
+     * @return mixed|void
+     */
     public function check_play_history($user, $agent)
     {
         unset($user, $agent);
@@ -382,6 +420,9 @@ class Song_Preview extends database_object implements media, playable_item
         return $songs;
     }
 
+    /**
+     * @return bool|PDOStatement
+     */
     public static function garbage_collection()
     {
         $sql = 'DELETE FROM `song_preview` USING `song_preview` ' .

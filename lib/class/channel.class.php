@@ -706,22 +706,42 @@ class Channel extends database_object implements media, library_item
         return $this->get_fullname();
     }
 
+    /**
+     * @param $user
+     * @param $agent
+     * @param $location
+     * @return mixed|void
+     */
     public function set_played($user, $agent, $location)
     {
         // Do nothing
     }
 
+    /**
+     * @param $user
+     * @param $agent
+     * @return mixed|void
+     */
     public function check_play_history($user, $agent)
     {
         unset($user, $agent);
         // Do nothing
     }
 
+    /**
+     * @param null $target
+     * @param null $player
+     * @param array $options
+     * @return bool
+     */
     public function get_transcode_settings($target = null, $player = null, $options = array())
     {
         return false;
     }
 
+    /**
+     * @return mixed|void
+     */
     public static function garbage_collection()
     {
         // Do nothing

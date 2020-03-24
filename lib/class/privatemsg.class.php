@@ -114,6 +114,9 @@ class PrivateMsg extends database_object
         return true;
     }
 
+    /**
+     * @param bool $details
+     */
     public function format($details = true)
     {
         unset($details); //dead code but called from other format calls
@@ -153,6 +156,10 @@ class PrivateMsg extends database_object
         return Dba::write($sql, array($this->id));
     }
 
+    /**
+     * @param array $data
+     * @return bool|string|null
+     */
     public static function create(array $data)
     {
         $subject = trim(strip_tags(filter_var($data['subject'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES)));

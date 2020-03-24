@@ -108,6 +108,9 @@ class CliHandler extends Handler
         }
     }
 
+    /**
+     * @param $handle
+     */
     public function iterateItems($handle)
     {
         $item = '';

@@ -64,6 +64,11 @@ class Recommendation
         return simplexml_load_string($content);
     }
 
+    /**
+     * @param $artist
+     * @param $album
+     * @return SimpleXMLElement
+     */
     public static function album_search($artist, $album)
     {
         $api_key = AmpConfig::get('lastfm_api_key');
