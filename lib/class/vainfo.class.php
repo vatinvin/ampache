@@ -1321,6 +1321,7 @@ class vainfo
         for ($count=0; $count < $abbr_count;$count++) {
             $commonabbr[$count] = "~\[*|\(*|\<*|\{*\b(?i)" . trim($commonabbr[$count]) . "\b\]*|\)*|\>*|\}*~";
         }
+
         return preg_replace($commonabbr, '', $name);
     }
 
