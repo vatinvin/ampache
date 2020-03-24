@@ -247,11 +247,9 @@ class vainfo
         $this->_get_plugin_tags();
     } // get_info
 
-    /*
+    /**
      * write_id3
      * This function runs the various steps to gathering the metadata
-     */
-    /**
      * @param $data
      */
     public function write_id3($data)
