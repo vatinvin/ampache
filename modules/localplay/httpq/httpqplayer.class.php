@@ -380,6 +380,7 @@ class HttpQPlayer
     public function get_repeat()
     {
         $args    = array();
+
         return $this->sendCommand('repeat_status', $args);
     } // get_repeat
 
@@ -390,6 +391,7 @@ class HttpQPlayer
     public function get_random()
     {
         $args    = array();
+
         return $this->sendCommand('shuffle_status', $args);
     } // get_random
 

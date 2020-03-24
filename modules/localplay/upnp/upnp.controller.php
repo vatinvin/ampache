@@ -123,6 +123,7 @@ class AmpacheUPnP extends localplay_controller
     {
         $sql = "INSERT INTO `localplay_upnp` (`name`, `url`, `owner`) " .
             "VALUES (?, ?, ?)";
+
         return Dba::query($sql, array($data['name'], $data['url'], Core::get_global('user')->id));
     }
 
@@ -198,6 +199,7 @@ class AmpacheUPnP extends localplay_controller
 
         $sql        = "SELECT * FROM `localplay_upnp` WHERE `id` = ?";
         $db_results = Dba::query($sql, array($instance));
+
         return Dba::fetch_assoc($db_results);
     }
 

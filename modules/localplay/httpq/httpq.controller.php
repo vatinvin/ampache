@@ -131,6 +131,7 @@ class AmpacheHttpq extends localplay_controller
 
         $sql = "INSERT INTO `localplay_httpq` (`name`, `host`, `port`, `password`, `owner`) " .
             "VALUES ('$name', '$host', '$port', '$password', '$user_id')";
+
         return Dba::write($sql);
     } // add_instance
 
