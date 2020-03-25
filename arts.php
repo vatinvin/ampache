@@ -154,10 +154,10 @@ switch ($_REQUEST['action']) {
         // Prevent the script from timing out
         set_time_limit(0);
 
-        $image = Art::get_from_source($_SESSION['form']['images'][$image_id], 'album');
+        $image      = Art::get_from_source($_SESSION['form']['images'][$image_id], 'album');
         $dimensions = Core::image_dimensions($image);
         $mime       = $_SESSION['form']['images'][$image_id]['mime'];
-        if (!Art::check_dimensions($dimensions) ){
+        if (!Art::check_dimensions($dimensions)) {
             show_confirmation(T_("There Was a Problem"), T_('Art file failed size check'), $burl);
         } else {
             // Special case for albums, I'm not sure if we should keep it, remove it or find a generic way
