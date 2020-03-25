@@ -395,7 +395,7 @@ class Recommendation
             }
             if (!empty($results['megaphoto']) && !Art::has_db($artist_id, 'artist')) {
                 $image = Art::get_from_source(array('url' => $results['megaphoto']), 'artist');
-                $rurl  = pathinfo($results['megaphoto']);
+                $rurl  = pathinfo((string) $results['megaphoto']);
                 $mime  = 'image/' . $rurl['extension'];
                 $art   = new Art($artist->id, 'artist');
                 $art->reset();

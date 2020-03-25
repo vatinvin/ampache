@@ -520,9 +520,7 @@ class Catalog_local extends Catalog
 
         if (!defined('SSE_OUTPUT')) {
             UI::show_box_top();
-        }
-        UI::update_text(T_('Catalog Updated'), sprintf(T_('Total Time: [%s] Total Media: [%s] Media Per Second: [%s]'), date('i:s', $time_diff), $this->count, $rate));
-        if (!defined('SSE_OUTPUT')) {
+            UI::update_text(T_('Catalog Updated'), sprintf(T_('Total Time: [%s] Total Media: [%s] Media Per Second: [%s]'), date('i:s', $time_diff), $this->count, $rate));
             UI::show_box_bottom();
         }
     } // add_to_catalog
