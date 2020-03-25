@@ -475,7 +475,7 @@ class Channel extends database_object implements media, library_item
     {
         $check = false;
         if ($this->interface && $this->port) {
-            $connection = @fsockopen($this->interface, $this->port);
+            $connection = @fsockopen($this->interface, (int) $this->port);
             if (is_resource($connection)) {
                 $check = true;
                 fclose($connection);
