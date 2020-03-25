@@ -142,9 +142,9 @@ class Subsonic_XML_Data
     private static function cleanId($objectid)
     {
         // Remove all al-, ar-, ... prefixs
-        $tpos = strpos($objectid, "-");
+        $tpos = strpos((string) $objectid, "-");
         if ($tpos !== false) {
-            $objectid = (int) (substr($objectid, $tpos + 1));
+            $objectid = (int) (substr((string) $objectid, $tpos + 1));
         }
 
         return $objectid;
